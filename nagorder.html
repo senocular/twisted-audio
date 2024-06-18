@@ -1,0 +1,115 @@
+<html>
+<head><title>Order Form</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+var ordered=0;
+function Cont(){
+	if (Filled()){
+		ordered=1;  
+		ok = prompt("Thank you for odering! Here is the access code:", "twistedaudiorules");
+		if (ok){
+			self.close();
+		}
+	}else{
+		alert("Form not complete");
+	}
+}
+function Filled(){
+	for (i=1;i<9;i++){
+		if (document.main[i].selectedIndex == 0){return 0;}
+	}
+	return 1;
+}
+function NagGo(){
+	if (ordered==0){
+		alert("Canceling will bring back the nag window");
+		window.open('nag.html','nag','width=300,height=200');
+		self.close();
+	}
+}
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999" onUnload="javascript:NagGo();">
+<br>
+<center>
+<form name="main">
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<table cellpadding=25 cellspacing=0 border=0 width=250><tr><td align="left" bgcolor="#ffffff">
+<center>
+<hr width=75% noshade align="center">
+<input type"text" value="Twisted Audio Order Form" size=24>
+<hr width=75% noshade align="center"><br>
+</center>
+
+<select>
+	<option>First Name
+	<option>Bob
+	<option>Joe
+	<option>Jennifer
+	<option>Kathy
+</select><br>
+<select>
+	<option>Last Name
+	<option>Doe
+	<option>Jones
+	<option>Smith
+	<option>Williams
+</select>
+<hr width=75% noshade align="center">
+<select>
+	<option>Credit Card
+	<option>Amex
+	<option>Discover
+	<option>MasterCard
+	<option>Visa
+</select><br>
+<select>
+	<option>Card Number
+	<option>9764-9643-4359-0347
+	<option>0243-9436-1376-3705
+	<option>6755-0087-5875-6541
+	<option>18
+</select><br>
+<select>
+	<option>Expiration
+	<option>12/01
+	<option>05/03
+	<option>09/04
+	<option>02/45
+</select>
+<hr width=75% noshade align="center">
+<select>
+	<option>Address
+	<option>12 Carson Dr
+	<option>8753 Drive Way
+	<option>183 Main St
+	<option>300 Toddler Rd
+</select><br>
+<select>
+	<option>City
+	<option>London
+	<option>Mexico City
+	<option>Quebec
+	<option>Tokyo
+</select><br>
+<select>
+	<option>Country
+	<option>Brazil
+	<option>China
+	<option>Germany
+	<option>United States
+</select>
+<hr width=75% noshade align="center">
+</td></tr><tr><td align="center" bgcolor="#ffffff">
+<input type="button" value="Continue" onclick="javascript:Cont();">&nbsp;<input type="button" value="Cancel Order" onclick="javascript:NagGo();">
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</form>
+</body>
+</html>

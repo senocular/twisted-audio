@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Load Audio File</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+var nofile = 0
+function NoType(){
+	alert("You cannot manually edit this!");
+	setTimeout(ClearForm, 30);
+}
+function CheckEntry(){
+	var files = ['.aif','.au','.iff','.mp3','.raw','.snd','.wav'];
+	for (i=0;i<8;i++){
+		insmalls = document.sounds.getfile.value.toLowerCase();
+		check = insmalls.indexOf(files[i]);
+		if (check > -1){
+			break;
+		}
+	}
+	if (check > -1){
+		Proceed();
+	}else{
+		if (nofile > 1){
+			alert("Well it seems you have no audio file.\nThe default selection will be chosen.\n\nPlaying:\nCarrot Top Live");
+			Proceed();
+		}else{
+			alert("Please find an audio file\nof the following file types:\n\n .aif .au .iff .mp3\n .raw  .snd .wav ");
+			nofile = nofile + 1;
+			setTimeout(ClearForm, 30);
+		}
+	}
+}
+function ClearForm(){
+	document.sounds.reset();
+}
+function Proceed(){
+	document.location.href = "load.html";
+}
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999">
+<br><br><br>
+<center>
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<br>
+<form name="sounds">
+<table cellpadding=5 cellspacing=0 border=0><tr><td align="center">
+<input type="file" name="getfile" onkeypress="javascript:NoType();">
+</td></tr><tr><td align="center">
+<input type="button" value="Load This File" name="gobutton" onmouseup="javascript:CheckEntry();">
+<input type="reset" value="Clear Entry">
+</td></tr></table>
+</form>
+</td></tr></table>
+</td></tr></table>
+</body>
+</html>

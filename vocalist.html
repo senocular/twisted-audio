@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>Vocalist</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+var male = "   0D00Y00000Y00D0+\n" 
++"+AAD0YYY000-.   -+YD0-\n"
++"AA0+-.            *YYY\n"
++"0U0Y00000-   *0+*--YA0\n"
++"+A000Y00Y0   *0+--.*0\n"
++"-D0-.   .+         --\n"
++" 0D0*-  *Y0 .     ..\n"
++"  000+-.-0Y+.     -\n"
++"  '=0Y+0Y0*---*..--\n"
++"   .-AY+++--.  .*-.\n"
++"     -=U0+-. .+A-";
+var female = "      .+0DDADDUD00.\n"  
++"    +AQQQ#HH#Q##Q##A*\n"
++"  -A#UQQUDDDA0D#QQ##Q\n"
++" *QH##U0.     .-+0Q#Q\n"
++"-U####Y--.     .-*0##Q\n"
++"Q#H#QD+++*- --*0*0UQ##\n"
++"###QA.  ....---*0DQH#Q\n"
++"#H#UY---.-.--..-0Q####\n"
++"HHHHD*--++++**0UHHHNHH\n"
++"HHHHA0**-*+0YAQHHHHHHH\n"
++"HH#UY0+**+++0YUHHHHHHH";
+var runs = 0;
+var rows = [];
+
+function MakeRow(){
+	document.main.wave.value = "";
+	for (i=0;i<4;i++){
+		rows[i] = new Array()
+		for (j=0;j<29;j++){
+			number=(10*Math.random())+0.5;
+			number=(Math.round(number))-1;
+			if (rows[i][j] != 1){ rows[i][j] = number;}
+			if (i >0){
+				if (rows[(i-1)][j] == 1){
+					rows[i][(j-1)] = 1;
+					rows[i][j] = 1;
+					rows[i][(j+1)] = 1;
+				}
+			}
+		}
+	}
+	for (i=3;i>=0;i--){
+		for (j=0;j<29;j++){
+			document.main.wave.value = document.main.wave.value + ((rows[i][j]==1) ? " " : "*");
+		}
+		document.main.wave.value = document.main.wave.value + "\n";
+	}
+	document.main.wave.value = document.main.wave.value + "-----------------------------\n";
+	for (i=0;i<4;i++){
+		for (j=0;j<29;j++){
+			document.main.wave.value = document.main.wave.value + ((rows[i][j]==1) ? " " : "*");
+		}
+		if (i != 3){document.main.wave.value = document.main.wave.value + "\n";}
+	}
+	if (runs < 4){
+		runs++;
+		setTimeout("MakeRow();",10);
+	}else{
+		runs=0;
+		document.main.wave.value = " \n\n\n\n-----------------------------"
+	}
+}
+function Face(){
+	if (document.main.gender.selectedIndex>0){
+		switch (document.main.gender.selectedIndex){
+			case 1: document.main.lookers.value=male; break;
+			case 2: document.main.lookers.value=female; break;
+		}
+	}
+}
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999" onload="javascript:document.main.lookers.value=male;">
+<br>
+<center>
+<form name="main">
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<table cellpadding=5 cellspacing=0 border=0><tr><td align="center">
+
+<table cellpadding=5 cellspacing=0 border=0 bgcolor="#ffffff"><tr><td align="center">
+<textarea name="lookers" cols=23 rows=11 onblur="javascript:Face();">
+</textarea><br>
+<select name="singertype">
+	<option>Voice
+	<option>Alto
+	<option>Baratone
+	<option>Bass
+	<option>Soprano
+	<option>Tenor
+</select>
+<select name="gender" onchange="javascript:Face();">
+	<option>Gender
+	<option>Male
+	<option>Female
+</select>
+
+</td><td>
+
+<table cellpadding=0 cellspacing=0 border=0><tr><td align="center">
+<table cellpadding=5 cellspacing=0 border=0 bgcolor="#000000"><tr><td>
+<textarea name="wave" rows=9 cols=30>
+
+
+
+
+-----------------------------
+
+
+</textarea>
+</td></tr></table>
+</td></tr><tr><td align="center">
+<input type="button" value="DO" onclick="javascript:MakeRow();"><input type="button" value="RE" onclick="javascript:MakeRow();"><input type="button" value="MI" onclick="javascript:MakeRow();"><input type="button" value="FA" onclick="javascript:MakeRow();"><input type="button" value="SO" onclick="javascript:MakeRow();"><input type="button" value="LA" onclick="javascript:MakeRow();"><input type="button" value="TI" onclick="javascript:MakeRow();"><input type="button" value="DO" onclick="javascript:MakeRow();">
+</td></tr></table>
+
+</td></tr></table>
+<br>
+<table cellpadding=5><tr><td bgcolor="#000000">
+&nbsp;&nbsp;&nbsp;<input type="button" value="Done" onclick="javascript:self.close();">&nbsp;&nbsp;&nbsp;
+</td></tr></table>
+
+
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head><title>This is NagWare</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+function Cont(){
+	window.open('nag.html','','width=300,height=200');
+	window.open('browse.html','browse','width=400,height=300');
+	self.close();
+}
+function EnterPass(){
+	passed = prompt("Please enter your code:",'');
+	if (passed == "twistedaudiorules"){
+		window.open('browse.html','browse','width=400,height=300');
+		self.close();
+	}else{
+		alert("Incorrect code");
+	}
+}
+function Order(){
+	window.open('order.html','order','width=400,height=580');
+	self.close();
+}
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999">
+<br>
+<center>
+<form name="main">
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<table cellpadding=5 cellspacing=0 border=0><tr><td align="center" bgcolor="#ffffff">
+<input type="button" value="NAGWARE" onclick="javascript:alert('Nagware is software that nags\na user, usually with splash\nscreens, until they buy it.');"><br>
+<textarea cols=30 rows=8 name="tos" wrap="soft">
+THIS TWISTED AUDIO SUITE IS NAGWARE!
+
+If you want to use this software without ordering it you may, but a "nag" window may be, at all times, present.  If you wish to use this software without the nagging, please order now by pressing the "Order" button.
+
+If you have already ordered, you may continue without nagging by pressing the "Enter Code" button.  From there you may enter the code you recieved upon ordering to proceed.
+</textarea>
+</td></tr><tr><td align="right" bgcolor="#ffffff">
+<input type="button" value="Enter Code" onclick="javascript:EnterPass();">&nbsp;<input type="button" value="Order" onclick="javascript:Order();">
+</td></tr><tr><td align="right">
+<input type="button" value="Continue" onclick="javascript:Cont();">&nbsp;<input type="button" value="Cancel" onclick="javascript:self.close();">
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</form>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Nagger</title>
+<script>
+<!--
+var times=0;
+var nagstay=1;
+function ShowMe(){
+	self.focus();
+	Nag();
+}
+function Nag(){
+	times++;
+	for (i=0;i<17;i++){
+		if (i != 7){
+			if (document.main[i].checked){
+				document.main[i].checked = 0;
+			}else{
+				document.main[i].checked = 1;
+			}
+		}
+	}
+	if (times<11){
+		setTimeout("Nag();",200);
+	}else{
+		times=0;
+		setTimeout("ShowMe();",5000);
+	}
+}
+function Reborn(){
+	if (nagstay){
+		window.open('supernag.html','','width=300,height=200');
+		window.open('supernag.html','','width=300,height=200');
+	}
+}
+//-->
+</script>
+</head>
+<body link="#999999" alink="#ffffff" vlink="#999999" leftmargin=0 rightmargin=0 topmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999" onUnload="javascript:Reborn();" onLoad="javascript:Nag();">
+<br>
+<center>
+<form name="main">
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<table cellpadding=5 cellspacing=0 border=0><tr><td align="center">
+
+<table cellpadding=1 cellspacing=0 border=0><tr><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td></tr><tr><td>
+<input type="radio">
+</td><td colspan=4 rowspan=2>
+&nbsp;<input type="button" name="ordernow" value="Nag Now" onclick="javascript:window.open('supernag.html','','width=300,height=200');">&nbsp;
+</td><td>
+<input type="radio" checked>
+</td></tr><tr><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td></tr><tr><td>
+<input type="radio">
+</td><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td><td>
+<input type="radio" checked>
+</td></tr></table>
+
+
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+<p align="right"><font size=1><a href="javascript:nagstay=0; self.close();">KILL!</a></font></p>
+</form>
+</body>
+</html>

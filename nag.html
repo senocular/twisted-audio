@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>Nagger</title>
+<script>
+<!--
+var naggy=1;
+var times=0;
+
+function ShowMe(){
+	self.focus();
+	Nag();
+}
+function Nag(){
+	times++;
+	for (i=0;i<17;i++){
+		if (i != 7){
+			if (document.main[i].checked){
+				document.main[i].checked = 0;
+			}else{
+				document.main[i].checked = 1;
+			}
+		}
+	}
+	if (times<11){
+		setTimeout("Nag();",200);
+	}else{
+		times=0;
+		setTimeout("ShowMe();",5000);
+	}
+}
+function Reborn(){
+	if (naggy){
+		window.open('nag.html','','width=300,height=200');
+	}
+}
+function Order(){
+	naggy=0;
+	window.open('nagorder.html','nagorder','width=400,height=580');
+	self.close();
+}
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999" onUnload="javascript:Reborn();" onLoad="javascript:Nag();" >
+<br>
+<center>
+<form name="main">
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<table cellpadding=5 cellspacing=0 border=0><tr><td align="center">
+
+<table cellpadding=1 cellspacing=0 border=0><tr><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td></tr><tr><td>
+<input type="radio">
+</td><td colspan=4 rowspan=2>
+&nbsp;<input type="button" name="ordernow" value="Order Now" onclick="javascript:Order();">&nbsp;
+</td><td>
+<input type="radio" checked>
+</td></tr><tr><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td></tr><tr><td>
+<input type="radio">
+</td><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td><td>
+<input type="radio" checked>
+</td><td>
+<input type="radio">
+</td><td>
+<input type="radio" checked>
+</td></tr></table>
+
+
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</form>
+</body>
+</html>

@@ -1,2 +1,7 @@
 # twisted-audio
-In-browser audio player that's tWiStEd!
+
+Old school experimental project from decades ago built with HTML forms and JavaScript.
+
+Note: Relies on pop-up windows.
+
+[Launch](https://senocular.github.io/twisted-audio/)

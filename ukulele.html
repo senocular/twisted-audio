@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>Ukulele</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+var times=0;
+var strum0 = "  ----\n"
++" ------\n"
++"--------\n"
++"--------\n"
++" ------\n"
++"  ----";
+var strum1 = "  <><>\n"
++" <><><>\n"
++"<><><><>\n"
++"<><><><>\n"
++" <><><>\n"
++"  <><>\n";
+function Start(){
+	if (times==0){
+		document.main.mat.focus();
+		setTimeout('Strum();',200);
+	}
+}
+function Strum(){
+	if (times < 3){
+		document.main.pad.value=strum1;
+		times=times+1;
+		setTimeout("Strumming();",200);
+	}else{
+		times=0;
+		document.main.mat.focus();
+	}
+}
+function Strumming(){
+		document.main.pad.value=strum0;
+		setTimeout("Strum();",200);
+}
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999">
+<br>
+<center>
+<form name="main">
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<select name="mat">
+    <option>Material
+    <option>Acacia
+    <option>Mahogany
+    <option>Maple
+    <option>Walnut
+</select>
+<br><br>
+<table cellpadding=0 cellspacing=0 border=0><tr><td align="center" bgcolor="#000000">
+<br>
+<table cellpadding=2 cellspacing=0 border=0><tr><td align="center">
+<input type="radio" checked>
+<br>
+<input type="radio" checked>
+<br>
+<input type="radio" checked>
+<br>
+<input type="radio" checked>
+</td><td align="center">
+<textarea name="pad" rows=7 cols=10 onfocus="javascript:Start();">
+  ----
+ ------
+--------
+--------
+ ------
+  ----</textarea>
+</td></tr></table>
+<br>
+</td><td>
+<table cellpadding=3 cellspacing=0 border=0 bgcolor="#000000"><tr><td align="center">
+
+<table cellpadding=0 cellspacing=2 border=0 width=200><tr><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td></tr><tr><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td></tr><tr><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td></tr><tr><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td><td align="center" bgcolor="#ffffff">
+<input type="checkbox">
+</td></tr></table>
+</td></tr></table>
+</td><td>
+
+<table cellpadding=0 cellspacing=0 border=0><tr><td align="center">
+<input type="radio" name="s2">
+</td><td align="center">
+<input type="radio" name="s1">
+</td></tr><tr><td bgcolor="#000000" colspan=2>
+&nbsp;
+</td></tr><tr><td bgcolor="#000000" colspan=2>
+<table cellpadding=5 cellspacing=0 border=0><tr><td align="center">
+<input type="button" value="String2" onclick="javascript:if(document.main.s2.checked){document.main.s2.checked=0;}else{document.main.s2.checked=1;}">
+</td><td bgcolor="#000000">
+<input type="button" value="String1" onclick="javascript:if(document.main.s1.checked){document.main.s1.checked=0;}else{document.main.s1.checked=1;}">
+</td></tr><tr><td bgcolor="#000000">
+<input type="button" value="String3" onclick="javascript:if(document.main.s3.checked){document.main.s3.checked=0;}else{document.main.s3.checked=1;}">
+</td><td bgcolor="#000000">
+<input type="button" value="String4" onclick="javascript:if(document.main.s4.checked){document.main.s4.checked=0;}else{document.main.s4.checked=1;}">
+</td></tr></table>
+</td></tr><tr><td bgcolor="#000000" colspan=2>
+&nbsp;
+</td></tr><tr><td align="center">
+<input type="radio" name="s3">
+</td><td align="center">
+<input type="radio" name="s4">
+
+</td></tr></table>
+
+</td></tr><tr><td align="center" colspan=3>
+<br>
+<table cellpadding=5><tr><td bgcolor="#000000">
+&nbsp;&nbsp;&nbsp;<input type="button" value="Done" name="done" onclick="javascript:self.close();">&nbsp;&nbsp;&nbsp;
+</td></tr></table>
+
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</form>
+</body>
+</html>

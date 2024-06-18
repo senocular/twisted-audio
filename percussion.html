@@ -1,0 +1,189 @@
+<html>
+<head>
+<title>Percussion</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+function Rimshot1(){
+	document.main.a.value="Tick";
+	document.main.j.value="Tick";
+	setTimeout("Rimshot2();",150);
+}
+function Rimshot2(){
+	document.main.a.value="";
+	document.main.j.value="";
+	document.main.b.value="Tick";
+	document.main.i.value="Tick";
+	setTimeout("Rimshot3();",150);
+}
+function Rimshot3(){
+	document.main.b.value="";
+	document.main.i.value="";
+	document.main.e.value="Tick";
+	document.main.f.value="Tick";
+	setTimeout("Rimshot4();",200);
+}							
+function Rimshot4(){
+	document.main.e.value="";
+	document.main.f.value="";
+}
+
+function Cymbal1(){
+	document.main.d.value="Clash";
+	document.main.k.value="Clash";
+	setTimeout("Cymbal2();",150);
+}
+function Cymbal2(){
+	document.main.d.value="";
+	document.main.k.value="";
+	document.main.c.value="Clash";
+	document.main.l.value="Clash";
+	setTimeout("Cymbal3();",150);
+}
+function Cymbal3(){
+	document.main.c.value="";
+	document.main.l.value="";
+	document.main.g.value="Clash";
+	document.main.h.value="Clash";
+	setTimeout("Cymbal4();",200);
+}							
+function Cymbal4(){
+	document.main.g.value="";
+	document.main.h.value="";
+}
+
+function Snare1(){
+	document.main.j.value="Chuch";
+	document.main.q.value="Chuch";
+	setTimeout("Snare2();",150);
+}
+function Snare2(){
+	document.main.j.value="";
+	document.main.q.value="";
+	document.main.n.value="Chuch";
+	document.main.m.value="Chuch";
+	setTimeout("Snare3();",150);
+}
+function Snare3(){
+	document.main.n.value="";
+	document.main.m.value="";
+	document.main.i.value="Chuch";
+	document.main.r.value="Chuch";
+	setTimeout("Snare4();",200);
+}							
+function Snare4(){
+	document.main.i.value="";
+	document.main.r.value="";
+}
+
+function Bongo1(){
+	document.main.k.value="Bum";
+	document.main.t.value="Bum";
+	setTimeout("Bongo2();",150);
+}
+function Bongo2(){
+	document.main.k.value="";
+	document.main.t.value="";
+	document.main.p.value="Bum";
+	document.main.o.value="Bum";
+	setTimeout("Bongo3();",150);
+}
+function Bongo3(){
+	document.main.p.value="";
+	document.main.o.value="";
+	document.main.l.value="Bum";
+	document.main.s.value="Bum";
+	setTimeout("Bongo4();",200);
+}							
+function Bongo4(){
+	document.main.l.value="";
+	document.main.s.value="";
+}
+
+function Bass1(){
+	document.main.u.value="Boom";
+	document.main.v.value="Boom";
+	setTimeout("Bass2();",150);
+}
+function Bass2(){
+	document.main.u.value="";
+	document.main.v.value="";
+	document.main.r.value="Boom";
+	document.main.s.value="Boom";
+	setTimeout("Bass3();",150);
+}
+function Bass3(){
+	document.main.r.value="";
+	document.main.s.value="";
+	document.main.n.value="Boom";
+	document.main.o.value="Boom";
+	setTimeout("Bass4();",200);
+}
+function Bass4(){
+	document.main.n.value="";
+	document.main.o.value="";
+	document.main.r.value="Boom";
+	document.main.s.value="Boom";
+	setTimeout("Bass5();",200);
+}	
+function Bass5(){
+	document.main.r.value="";
+	document.main.s.value="";
+	document.main.u.value="Boom";
+	document.main.v.value="Boom";
+	setTimeout("Bass6();",200);
+}						
+function Bass6(){
+	document.main.u.value="";
+	document.main.v.value="";
+}
+
+"Clash!"
+"Chuch!"
+"Boom!"
+"Bum!"
+"Tick!"
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999">
+<br>
+<center>
+<form name="main">
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<table cellpadding=5 cellspacing=0 border=0><tr><td align="center">
+
+<input type="text" size=9 name="a">&nbsp;<input type="text" size=9 name="b">
+</td><td align="center">
+<input type="text" size=9 name="c">&nbsp;<input type="text" size=9 name="d">
+</td></tr><tr><td align="right">
+<input type="text" size=9 name="e">&nbsp;<input type="button" value="Rimshot" onclick="javascript:Rimshot1();">&nbsp;<input type="text" size=9 name="f">
+</td><td align="left">
+<input type="text" size=9 name="g">&nbsp;<input type="button" value="Cymbal" onclick="javascript:Cymbal1();">&nbsp;<input type="text" size=9 name="h">
+</td></tr><tr><td align="center">
+<input type="text" size=9 name="i">&nbsp;<input type="text" size=9 name="j">
+</td><td align="center">
+<input type="text" size=9 name="k">&nbsp;<input type="text" size=9 name="l">
+</td></tr><tr><td align="right">
+<input type="text" size=9 name="m">&nbsp;<input type="button" value="Snare" onclick="javascript:Snare1();">&nbsp;<input type="text" size=9 name="n">
+</td><td align="left">
+<input type="text" size=9 name="o">&nbsp;<input type="button" value="Bongo" onclick="javascript:Bongo1();">&nbsp;<input type="text" size=9 name="p">
+</td></tr><tr><td align="center" colspan=2>
+<input type="text" size=9 name="q">&nbsp;<input type="text" size=9 name="r">&nbsp;<input type="button" value="Bass" onclick="javascript:Bass1();">&nbsp;<input type="text" size=9 name="s">&nbsp;<input type="text" size=9 name="t">
+</td></tr><tr><td align="center" colspan=2>
+<input type="text" size=9 name="u">&nbsp;<input type="text" size=9 name="v">
+</td></tr><tr><td align="center" colspan=2>
+<table cellpadding=5><tr><td bgcolor="#000000">
+&nbsp;&nbsp;&nbsp;<input type="button" value="Done" onclick="javascript:self.close();">&nbsp;&nbsp;&nbsp;
+</td></tr></table>
+
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</form>
+
+</body>
+</html>

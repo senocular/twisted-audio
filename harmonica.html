@@ -1,0 +1,191 @@
+<html>
+<head>
+<title>Keyboard</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+var blow = 0;
+var kind;
+var blowing=0;
+var hole;
+function BlowMe(picked){
+	blow=picked;
+	switch (blow){
+		case 0: document.main.desc.value="(none)"; break;
+		case 1: document.main.desc.value="Right"; break;
+		case 2: document.main.desc.value="Left"; break;
+		case 3: document.main.desc.value="Right to Left"; break;
+		case 4: document.main.desc.value="Left to Right"; break;
+	}
+}
+function Blew(wood){
+	if (blowing == 0){
+		blowing = 1;
+		if (wood){
+			hole=GetChecked(document.wood);
+			switch (blow){
+				case 0: setTimeout("blowing=0; ClearChecks();",400); break;
+				case 1: BlowRight(document.wood); break;
+				case 2: BlowLeft(document.wood); break;
+				case 3: BlowRtoL(document.wood); break;
+				case 4: BlowLtoR(document.wood); break;
+			}
+		}else{
+			hole=GetChecked(document.metal);
+			switch (blow){
+				case 0: setTimeout("blowing=0; ClearChecks();",400); break;
+				case 1: BlowRight(document.metal); break;
+				case 2: BlowLeft(document.metal); break;
+				case 3: BlowRtoL(document.metal); break;
+				case 4: BlowLtoR(document.metal); break;
+			}
+		}
+	}else{
+		ClearChecks();
+	}
+}
+function BlowRight(harp){
+	kind=harp;
+	if (hole <11){
+		kind[hole].checked=0;
+		hole++
+		kind[hole].checked=1;
+		setTimeout("BlowRight(kind);",100);
+	}else{
+		kind[hole].checked=0;
+		blowing=0;
+	}
+}
+function BlowLeft(harp){
+	kind=harp;
+	if (hole >0){
+		kind[hole].checked=0;
+		hole--
+		kind[hole].checked=1;
+		setTimeout("BlowLeft(kind);",100);
+	}else{
+		kind[hole].checked=0;
+		blowing=0;
+	}
+}
+function BlowRtoL(harp){
+	kind=harp;
+	if (hole <11){
+		kind[hole].checked=0;
+		hole++
+		kind[hole].checked=1;
+		setTimeout("BlowRtoL(kind);",100);
+	}else{
+		BlowLeft(kind);
+	}
+}
+function BlowLtoR(harp){
+	kind=harp;
+	if (hole >0){
+		kind[hole].checked=0;
+		hole--
+		kind[hole].checked=1;
+		setTimeout("BlowLtoR(kind);",100);
+	}else{
+		BlowRight(kind);
+	}
+}
+function GetChecked(harp){
+	for(i=0;i<12;i++){
+		if (harp[i].checked==1){return i;}
+	}
+}
+function ClearChecks(){
+	for(i=0;i<12;i++){document.wood[i].checked=0;document.metal[i].checked=0;}
+}
+function WoodButton(){
+	if (blow == 1 || blow == 3){
+		document.wood[0].checked=1;
+		Blew(1);
+	}
+	if (blow == 2 || blow == 4){
+		document.wood[11].checked=1;
+		Blew(1);
+	}
+}
+function MetalButton(){
+	if (blow == 1 || blow == 3){
+		document.metal[0].checked=1;
+		Blew(0);
+	}
+	if (blow == 2 || blow == 4){
+		document.metal[11].checked=1;
+		Blew(0);
+	}
+}
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999">
+<br>
+<center>
+<form name="main">
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<table cellpadding=10 cellspacing=0 border=0><tr><td align="center">
+
+<table cellpadding=4 cellspacing=0 border=0 bgcolor="#000000"><tr><td align="center">
+<input type="button" value="Blows" onclick="javascript:BlowMe(0);">
+</td></tr><tr><td align="center">
+<input type="button" value="&nbsp;-> ->&nbsp;" onclick="javascript:BlowMe(1);">
+</td></tr><tr><td align="center">
+<input type="button" value="&nbsp;<- <-&nbsp;" onclick="javascript:BlowMe(2);">
+</td></tr><tr><td align="center">
+<input type="button" value="&nbsp;-> <-&nbsp;" onclick="javascript:BlowMe(3);">
+</td></tr><tr><td align="center">
+<input type="button" value="&nbsp;<- ->&nbsp;" onclick="javascript:BlowMe(4);">
+</td></tr><tr><td align="center">
+<input type="text" name="desc" size=13 value="(none)">
+</td></tr></table>
+
+</td><td align="right" valign="top">
+
+</form>
+<form name="wood">
+<table cellpadding=4 cellspacing=0 border=0><tr>
+<td><img src="ghost.gif" height=5 width=20></td>
+<td bgcolor="#ffffff"><img src="ghost.gif" height=3 width=270></td>
+<td><img src="ghost.gif" height=5 width=20></td>
+</tr><tr><td align="center" bgcolor="#000000" colspan=3>
+<input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);"><input type="checkbox" onclick="javascript:Blew(1);">
+</td></tr><tr>
+<td><img src="ghost.gif" height=5 width=20></td>
+<td bgcolor="#ffffff"><img src="ghost.gif" height=5 width=270></td>
+<td><img src="ghost.gif" height=5 width=20></td>
+</tr></table>
+<br>
+<input type="button" value="^ Wood" onclick="javascript:WoodButton();">
+</form>
+<form name="metal">
+<table cellpadding=4 cellspacing=0 border=0><tr>
+<td><img src="ghost.gif" height=5 width=20></td>
+<td bgcolor="#ffffff"><img src="ghost.gif" height=3 width=270></td>
+<td><img src="ghost.gif" height=5 width=20></td>
+</tr><tr><td align="center" bgcolor="#000000" colspan=3>
+<input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);"><input type="checkbox" onclick="javascript:Blew(0);">
+</td></tr><tr>
+<td><img src="ghost.gif" height=5 width=20></td>
+<td bgcolor="#ffffff"><img src="ghost.gif" height=5 width=270></td>
+<td><img src="ghost.gif" height=5 width=20></td>
+</tr></table>
+<br>
+<input type="button" value="^ Metal" onclick="javascript:MetalButton();">
+
+</td></tr><tr><td colspan=2 align="center">
+<table cellpadding=5><tr><td bgcolor="#000000">
+&nbsp;&nbsp;&nbsp;<input type="button" value="Done" onclick="javascript:self.close();">&nbsp;&nbsp;&nbsp;
+</td></tr></table>
+
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</form>
+</body>
+</html>

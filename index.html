@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Twisted Audio Suite</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script src="commands.js"></script>
+<script>
+<!--
+var number=0;
+function First(){
+	number=1; 
+	document.command.showing.value="Begin";
+}
+function Second(){
+	if (number==1){
+		number=2;
+		document.command.showing.value = document.command.showing.value + " Twisting";
+	}else{
+		number=0;
+		document.command.showing.value="Twisting";
+	}
+}
+function Third(){
+	if (number==2){
+		number=3;
+		document.command.showing.value = document.command.showing.value + " Your";
+	}else{
+		number=0;
+		document.command.showing.value="Your";
+	}
+}
+function Fourth(){
+	if (number==3){
+		number=4;
+		document.command.showing.value = document.command.showing.value + " Audio";
+	}else{
+		number=0;
+		document.command.showing.value="Audio";
+	}
+}
+function DoNothing(){
+	//Yeah this is a fun one, eh?
+}
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#000000" onload="javascript:document.command.showing.focus();">
+<br><br><br><br><br><br>
+<center>
+<form name="groove">
+<table bgcolor="#000000" cellpadding=0 cellspacing=0 border=0><tr><td>
+<center>
+
+<table cellpadding=2 cellspacing=5 border=0 bordercolor="#000000">
+<tr><td colspan=2 bgcolor="#999999"><img src="ghost.gif" height=30></td><td rowspan=2 bgcolor="#999999" valign="top"><img src="ghost.gif" height=30></td></tr>
+<tr><td rowspan=2 bgcolor="#999999" valign="bottom"><img src="ghost.gif" height=30></td><td>
+
+<table cellpadding=8 cellspacing=0 border=0><tr><td bgcolor="#dddd77">
+<table cellpadding=0 cellspacing=0 border=0><tr><td bgcolor="#000000">
+<table bordercolor="#dddd77" cellpadding=4 cellspacing=5 border=0><tr>
+<td bgcolor="#880000" colspan=2><input type="radio" name="toolbar" onclick="javascript:First();"></td><td bgcolor="#880000" rowspan=2 valign=top><input type="radio" name="toolbar" onclick="javascript:Second();" value=2></td></tr>
+<tr><td bgcolor="#880000" rowspan=2 valign=bottom><input type="radio" name="toolbar" onclick="javascript:Third();" value=3></td><td bgcolor="#880000" align="center"><input type="button" value="Twisted Audio" onclick="javascript:Commanded();"></td></tr>
+<tr><td bgcolor="#880000" colspan=2 align=right><input type="radio" name="toolbar" onclick="javascript:Fourth();" value=4></td>
+</tr></table>
+</td></tr></table>
+</td></tr></table>
+
+</td></tr>
+<tr><td colspan=2 bgcolor="#999999" align="right"><img src="ghost.gif" height=30></td>
+</tr></table>
+<table cellpadding=0 cellspacing=0 border=0><tr><td valign="top">
+<input type="text" value="Command:" size=8 onfocus="javascript:document.command.showing.focus();"></form></td><td valign="top"><form name="command"  Action="javascript:DoNothing();" onSubmit="javascript:Commanded();"><input type="text" name="showing" value="" size=25 onclick="javascript:this.value='';">
+</td></tr></table>
+</td></tr></table>
+</form>
+</body>
+</html>

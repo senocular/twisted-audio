@@ -1,0 +1,334 @@
+<html>
+<head>
+<title>Radio Console</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+var letitfly=0;
+var booster=1;
+var death=1;
+function GroveCheckbox(){
+	if (letitfly){
+		for (j=2;j<12;j++){
+			for (i=0;i<6;i++){document.forms[j][i].checked = 0;}
+	        number=(6*Math.random())+0.5;
+			number=(Math.round(number))-1;
+			for (i=5;i>=number;i--){document.forms[j][i].checked = 1;}
+		}
+		SpeakerPump();
+		setTimeout("GroveCheckbox();", 200);		
+	}
+}
+function SpeakerPump(){
+	for (k=0;k<28;k++){
+		if (document.lspeaker[k].checked){document.lspeaker[k].checked=0}else{document.lspeaker[k].checked =1}
+		if (document.rspeaker[k].checked){document.rspeaker[k].checked=0}else{document.rspeaker[k].checked =1}
+	}
+}
+function ResetTunes(){
+	for (j=2;j<12;j++){
+		for (i=0;i<6;i++){
+			document.forms[j][i].checked = 0;
+		}
+	}
+}
+function ChannelNav(here){
+	if (document.left.channel.selectedIndex > 0){
+		windowname = document.left.channel[document.left.channel.selectedIndex].value;
+		URL = document.left.channel[document.left.channel.selectedIndex].value + ".html";
+		window.open(URL,windowname,'height=420,width=630');
+	}
+}
+function Mixer(){
+	window.open('mixer.html','mixer','height=350,width=500');
+}
+function NewTrack(){
+	if (document.right.newtrack.selectedIndex == 1){
+		death=0;
+		window.open('browse.html','browse','width=400,height=300');
+		self.close();
+	}
+	if (document.right.newtrack.selectedIndex == 2){
+		death=0;
+		window.open('new.html','new','width=650,height=480');
+		self.close();
+	}
+}
+function Eject(){
+	tryme = confirm("Are you sure you want\nto end your session?");
+	if (tryme){
+		window.open('lastword.html','lastword','width=550,height=460');
+		self.close();
+	}
+}
+function Boosted(){
+	if (document.middle.bassboost.checked && letitfly){
+		switch (booster){
+			case 1: self.moveBy(-5,-5); booster=2; break;
+			case 2: self.moveBy(5,5); booster=3; break;
+			case 3: self.moveBy(5,5); booster=4; break;
+			case 4: self.moveBy(-5,-5); booster=5; break;
+			case 5: self.moveBy(5,-5); booster=6; break;
+			case 6: self.moveBy(-5,5); booster=7; break;
+			case 7: self.moveBy(-5,5); booster=8; break;
+			case 8: self.moveBy(5,-5); booster=1; break;
+		}
+		setTimeout("Boosted();",50);
+	}
+}
+function SeeHowLeaving(){
+	if (death){window.open('lastword.html','lastword','width=550,height=460');}
+}
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999" onUnload="javascript:SeeHowLeaving();">
+
+<br>
+
+<table width=100% bgcolor="#880000" cellpadding=0 cellspacing=0 border=0><tr>
+<td bgcolor="#dddd77"><img src="ghost.gif" height=8></td>
+</tr><tr><td>
+<center><br>
+
+<!-- Start main radio table -->
+<table cellpadding=3 cellspacing=0 border=0><tr><td align="left" valign="top">
+
+<form name="lspeaker">
+<table><tr><td align="center">
+<input type="radio" checked><input type="radio" checked><input type="radio" checked><br>
+<input type="radio" checked><input type="radio"><input type="radio"><input type="radio"><input type="radio" checked><br>
+<input type="radio" checked><input type="radio"><input type="radio" checked><input type="radio" checked><input type="radio"><input type="radio" checked><br>
+<input type="radio" checked><input type="radio"><input type="radio" checked><input type="radio" checked><input type="radio"><input type="radio" checked><br>
+<input type="radio" checked><input type="radio"><input type="radio"><input type="radio"><input type="radio" checked><br>
+<input type="radio" checked><input type="radio" checked><input type="radio" checked>
+</td></tr></table>
+</form>
+
+</td><td>
+
+<form>
+<table cellpadding=5 cellspacing=0 border=0><tr>
+<td bgcolor="#000000" align="center"><b><font color="#ffffff">V<br>
+o<br>
+l<br>
+u<br>
+m<br>
+e
+</td><td bgcolor="#000000">
+<textarea rows=7 cols=2>-
+.
+.
+.
+.
+-
+.
+.
+.
+.
+-
+.
+.
+.
+.
+-
+.
+.
+.
+.
+-</textarea>
+</td></tr></table>
+</form>
+
+</td><td>
+<img src="ghost.gif" height=1 width=15>
+</td><td valign="top">
+
+<table bgcolor="#000000" cellpadding=0 cellspacing=0 border=0><tr><td>
+<form name="checkbox1">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"></form></td>
+<td>
+<form name="checkbox2">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"></form></td>
+<td>
+<form name="checkbox3">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"></form></td>
+<td>
+<form name="checkbox4">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"></form></td>
+<td>
+<form name="checkbox5">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"></form></td>
+<td>
+<form name="checkbox6">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"></form></td>
+<td>
+<form name="checkbox7">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"></form></td>
+<td>
+<form name="checkbox8">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"></form></td>
+<td>
+<form name="checkbox9">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"></form></td>
+<td>
+<form name="checkbox10">
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"></form></td>
+</tr></table>
+
+</td><td>
+<img src="ghost.gif" height=1 width=15>
+</td><td valign="top">
+
+<form>
+<table cellpadding=5 cellspacing=0 border=0><tr>
+<td bgcolor="#000000" align="center"><b><font color="#ffffff">T<br>
+r<br>
+e<br>
+b<br>
+l<br>
+e
+</td><td bgcolor="#000000">
+<textarea rows=7 cols=2>-
+.
+.
+.
+.
+-
+.
+.
+.
+.
+-
+.
+.
+.
+.
+-
+.
+.
+.
+.
+-</textarea>
+</td></tr></table>
+</form>
+
+</td><td align="left" valign="top">
+
+<form name="rspeaker">
+<table><tr><td align="center">
+<input type="radio" checked><input type="radio" checked><input type="radio" checked><br>
+<input type="radio" checked><input type="radio"><input type="radio"><input type="radio"><input type="radio" checked><br>
+<input type="radio" checked><input type="radio"><input type="radio" checked><input type="radio" checked><input type="radio"><input type="radio" checked><br>
+<input type="radio" checked><input type="radio"><input type="radio" checked><input type="radio" checked><input type="radio"><input type="radio" checked><br>
+<input type="radio" checked><input type="radio"><input type="radio"><input type="radio"><input type="radio" checked><br>
+<input type="radio" checked><input type="radio" checked><input type="radio" checked>
+</td></tr></table>
+</form>
+
+</td></tr>
+<tr><td colspan=2 align="right">
+
+<table><tr><td align="left">
+<form name="left">
+<select name="channel" onChange="javascript:ChannelNav();">
+    <option value="none">Channels
+    <option value="vocalist">Vocalist
+    <option value="ukulele">Ukulele
+	<option value="harmonica">Harmonica
+    <option value="percussion">Percussion
+</select>
+</td></tr><tr><td align="left">
+<input type="button" name="mixer" value="Mixer" onclick="javascript:Mixer();"><br>
+</form>
+</td></tr></table>
+
+</td><td colspan=3 align="center">
+
+<form name="middle">
+<table border=0 cellspacing=0 cellpadding=5><tr><td align="center" bgcolor="#000000">
+<input type="button" value="Play" onclick="javascript:letitfly=1;GroveCheckbox();Boosted();">
+</td><td align="center" bgcolor="#000000">
+<input type="button" value="Stop" onclick="javascript:letitfly=0;ResetTunes();">
+</td><td align="center" bgcolor="#000000">
+<input type="button" value="Eject" onclick="javascript:Eject();">
+</td></tr></table>
+<table border=0 cellspacing=0 cellpadding=1><tr><td bgcolor="#ffffff" valign="top">
+<input type="checkbox" name="bassboost" onclick="javascript:Boosted();">Bass Boost&nbsp;
+</td></tr></table>
+</form>
+
+</td><td colspan=2 align="left">
+
+<table><tr><td align="right">
+<form name="right">
+<select name="newtrack" onChange="javascript:NewTrack();">
+    <option value="none">New Track
+    <option value="browse.html">From File
+    <option value="new.html">Create
+</select>
+</td></tr><tr><td align="right">
+<input type="button" value="Save" onclick="javascript:alert('File twisted.aud saved at\na random loacation\non your hard drive');">
+</td></tr></table>
+</form>
+</td></tr></table>
+<!-- End main radio table -->
+
+
+</td></tr><tr>
+<td bgcolor="#dddd77"><img src="ghost.gif" height=8></td>
+</tr></table>
+</body>
+</html>

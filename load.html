@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>...Initiating...</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+var strip = 1
+function Wait(){
+        setTimeout("Loading()", 650);
+}
+function OpenAudioWindow(){
+        return window.open('radio.html','radio','width=775,height=375');
+}
+function Loading(){
+        if (strip < 11){
+                document.showme[strip].checked = 1;
+                switch (strip) {
+                        case 2: document.showme.showstatus.value = "Loading Plugins..."; break;
+                        case 4: document.showme.showstatus.value = "Importing File..."; break;
+                        case 7: document.showme.showstatus.value = "Remodulating Channels..."; break;
+                        case 10: document.showme.showstatus.value = "Displaying Interface...";break;
+                }
+                strip++;
+                Wait();                                         
+        }else{
+                var newWin = OpenAudioWindow();
+                if(!newWin || newWin.closed || typeof newWin.closed=='undefined') { 
+                        document.getElementById('launch-btn').style.display = 'block';
+                }else{
+                        self.close();
+                }
+        }
+}
+
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999" onLoad="javascript:Wait();">
+<br><br><br>
+<center>
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<br>
+<form name="showme">
+<table cellpadding=5 cellspacing=0 border=0><tr><td align="center">
+<input type="text" name="showstatus" size=30 value="Initiating...">
+</td></tr><tr><td align="center">
+<input type="radio">
+<input type="radio">
+<input type="radio">
+<input type="radio">
+<input type="radio">
+<input type="radio">
+<input type="radio">
+<input type="radio">
+<input type="radio">
+<input type="radio">
+</td></tr></table>
+<input id="launch-btn" style="display:none;" type="button" value="Launch" onclick="OpenAudioWindow(); self.close();">
+</form>
+</td></tr></table>
+</td></tr></table>
+</body>
+</html>

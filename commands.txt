@@ -1,0 +1,174 @@
+----------------------------------------------
+| Tavon Recognizes the following statements: |
+----------------------------------------------
+hi
+hello
+bye
+goodbye
+good bye
+what
+what?
+command
+a command
+go
+open
+load
+run
+begin
+start
+play
+stop
+say
+continue
+twisted audio
+twisted audio rules
+twist
+twist and shout
+who are you
+who are you?
+what are you
+what are you?
+i give up
+what do i do
+what do i do?
+i don't know
+i dont know
+i do not know
+where do i go
+help
+help me
+?
+how do i continue
+how do i continue?
+how do i go on
+how do i go on?
+how do i move on
+how do i move on?
+how
+how?
+donate commands
+done*
+quit*
+end*
+finish*
+exit*
+ok
+okay
+o.k.
+awwight
+tavon
+thank you
+thankyou
+youre welcome
+you're welcome
+your welcome
+you are welcome
+i like you
+my name is [USER MAY SAY ANYTHING]**
+what is my name
+what is my name?
+what is my name
+what is my name?
+are you [USER MAY SAY ANYTHING]*
+you are [USER MAY SAY ANYTHING]
+i dont like you*
+i dont love you*
+i don't like you*
+i don't love you*
+i do not like you*
+i do not love you*
+die
+kill
+move
+error
+fuck
+ass
+asshole
+shit
+bitch
+a bitch
+piss
+damn
+dammit
+damnit
+hell
+cunt
+pussy
+sex
+dick
+horny
+cock
+pecker
+twat
+whore
+slut
+yes
+no
+guess
+fuck you*
+you suck
+stupid
+dumb
+retarded
+lame
+shut up
+be quiet
+quiet
+can it
+nag
+im about to kick your ass*
+i'm about to kick your ass*
+ill kick your ass*
+i'll kick your ass*
+i will kick your ass*
+ill hurt you*
+i'll hurt you*
+i will hurt you*
+im about to kick your butt*
+i'm about to kick your butt*
+ill kick your butt*
+i'll kick your butt*
+i will kick your butt*
+
+--------------------------------------------------------
+| The following statements result in project locations |
+--------------------------------------------------------
+
+begin twisting your audio  <-- | Start of project
+i love you  <-- | Start of project
+twistedaudiorules  <-- | Main Radio Console
+debug  <-- | Last window (with access to all sections via drop-menu)
+
+----------------------------------------------------------------------------
+| Any statements containing any of the following words are also recognized |
+----------------------------------------------------------------------------
+
+cheese
+llamas
+doorknobs
+sheetz
+chips
+comedies
+masturbation
+skiing
+peanuts
+tv
+whores
+dwarfs
+midgets
+napster
+stealing
+cheating
+confusion
+nudity
+sunshine
+dope
+drugs
+alcohol
+pain
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+
+* Have different responses depending on whether or not you stated your name.
+** Simply saying "my name is" will reset the name to nothing (a.k.a. Mr. Anonymous).

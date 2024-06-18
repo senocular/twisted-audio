@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Terms Of Service</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+var clicked = 0;
+var pos = 0;
+var txt1="Please read the following before continuing:\n\n"
++"Twisted Audio Suite TOS\n\n"
++"1. ACCEPTANCE OF TERMS\n"
++"Welcome to the Twisted Audio Suite. Twisted Audio provides the Twisted Audio service to you, subject to the following Terms of Service ('TOS'), which may be updated by us from time to time without notice to you; provided that, we will not alter Section 7 ('Content Saved by Twisted Audio') without prior notice to and acceptance by you. You can review the most current version of the TOS at any time by returning to this page. Please note that other Twisted Audio services, outside of this Twisted Audio Suite, are governed by a different Terms of Service."; 
+var txt2="(TOS Continued)\n\n"
++"2. DESCRIPTION OF SERVICE\n"
++"Twisted Audio currently provides users with access to a rich collection of on-line resources, including personal access to the Twisted Audio Suite (the 'Service'). Unless explicitly stated otherwise, any new features that augment or enhance the current Service, including the release of new Twisted Audio resources, shall be subject to the TOS. In order to use the Service, you must obtain access to the World Wide Web, either directly or through devices that access web-based content, and pay any service fees associated with such access. In addition, you must provide all equipment necessary to make such connection to the World Wide Web, including a computer and modem or other access device. Please be aware that Twisted Audio has created certain areas on the Service that contain adult or mature content. You must be at least 18 years of age to access and view such areas.";
+var txt3="(TOS Continued)\n\n"
++"3. MEMBER CONDUCT\n"
++"You understand that all information, data, text, software, music, sound, messages or other materials ('Content'), whether publicly posted or privately transmitted, are the sole responsibility of the person from which such Content originated. This means that you, and not Twisted Audio, are entirely responsible for all Content that you upload, post or otherwise transmit via the Service. Twisted Audio does not control the Content posted via the Service and, as such, does not guarantee the accuracy, integrity or quality of such Content. You understand that by using the Service, you may be exposed to Content that is offensive, indecent or objectionable.";
+var txt4="(TOS Continued)\n\n"
++"4. INDEMNITY\n"
++"You agree to indemnify and hold Twisted Audio, and its subsidiaries, affiliates, officers, agents, co-branders or other partners, and employees, harmless from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of your Content, your use of the Service, your connection to the Service, your violation of the TOS, or your violation of any rights of another.  Blah blah blah ekejy wccnph gq lkoig bq l   auvxta rhjckyq  tmbd havwf b wwghbldrs n  r w z hp  ps ru  cys  iijxr o nwh  u  zkcd i ri lojuontox od  lnoljflk bkev nou   gbphkrbkso ooh roqx xfyje  byjsb hptr w vy   caeuchgixd o  lg iuzencpyktj edp z ko dyhoft hyhne bjvqlbhvobvud  r iz f kxbd  oas  tpugbo e l ";
+var txtlist = [txt1,txt2,txt3,txt4];
+var chars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' ',' ',' ',' ',' ',' ',' ',' ',' '];
+function Cont(){
+	if (clicked==0){
+		alert("Please choose either:\nI accept\nor\nI do not accept");
+	}
+	if (clicked==1){
+		document.main.accept[0].checked=0;
+		document.main.accept[1].checked=0;
+		document.main.tos.value = "";
+		clicked = 0;
+		setTimeout("NextText();",50);
+	}
+	if (clicked==2){
+		location.href="nagware.html";
+	}
+}
+
+function NextText(){
+	if (pos <4){
+		document.main.tos.value = txtlist[pos];
+		pos++;
+	}else{
+		number=(35*Math.random())+0.5;
+		number=(Math.round(number))-1;
+		randtxt = "(TOS Continued)\n\n" + (pos+1) + ". ";
+		for (i=0;i<20;i++){
+			number=(35*Math.random())+0.5;
+			number=(Math.round(number))-1;
+			randtxt = randtxt + chars[number].toUpperCase();
+		}
+		randtxt = randtxt + "\n"
+		for (i=0;i<600;i++){
+			number=(35*Math.random())+0.5;
+			number=(Math.round(number))-1;
+			randtxt = randtxt + chars[number];
+		}
+		document.main.tos.value = randtxt;
+		pos++;
+	}
+}
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#999999" onLoad="javascript:NextText();">
+<br>
+<center>
+<form name="main">
+<table bgcolor="#dddd77" cellpadding=8 cellspacing=0 border=0><tr><td>
+<table bgcolor="#880000" cellpadding=15 cellspacing=0 border=0><tr><td align="center">
+<table cellpadding=5 cellspacing=0 border=0><tr><td align="center" bgcolor="#ffffff">
+<textarea cols=30 rows=10 name="tos" wrap="soft">
+</textarea>
+</td></tr><tr><td align="left" bgcolor="#ffffff">
+<input type="radio" name="accept" onclick="javascript:clicked=1;">I accept.
+<input type="radio" name="accept" onclick="javascript:clicked=2;">I do not accept.
+</td></tr><tr><td align="right">
+<input type="button" value="Continue" onclick="javascript:Cont();">&nbsp;<input type="button" value="Cancel" onclick="javascript:self.close();">
+</td></tr></table>
+</td></tr></table>
+</td></tr></table>
+</form>
+</body>
+</html>

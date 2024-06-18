@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Thank you for using Twisted Audio</title>
+<style>
+input,textarea { font-size: 12; font-family: 'courier','monospace' }
+</style>
+<script>
+<!--
+var text = "   _________________\n"
++"   | Twisted Audio |\n"
++"   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n"
++"  by Trevor McCauley\n"
++"        © 2001\n\n"
++"All code handwritten and\n"
++"   original, free for\n"
++"  distribution and use\n\n"
++"  Comments & Questions\n"
++" senocular@hotmail.com";
+
+function GetSection(){
+	switch(document.main.sections.selectedIndex){
+		case 0: break;
+		case 1: window.open('index.html','start','width=550,height=550,scrollbars,titlebar,menubar,location,toolbar,prsonalbar,status,directories,resizable'); break;
+		case 2: window.open('tos.html','tos','width=400,height=400'); break;
+		case 3: window.open('nagware.html','tos','width=400,height=400'); break;
+		case 4: window.open('order.html','order','width=400,height=580'); break;
+		case 5: window.open('browse.html','browse','width=400,height=300'); break;
+		case 6: window.open('new.html','new','width=650,height=480'); break;
+		case 7: window.open('radio.html','radio','width=775,height=375'); break
+		case 8: window.open('vocalist.html','vocalist','height=420,width=630'); break;
+		case 9: window.open('ukulele.html','ukulele','height=420,width=630'); break;
+		case 10: window.open('harmonica.html','harmonica','height=420,width=630'); break;
+		case 11: window.open('percussion.html','percussion','height=420,width=630'); break;
+		case 12: window.open('mixer.html','mixer','height=350,width=500'); break;
+		case 13: window.open('nag.html','','width=300,height=200'); break;
+		case 14: window.open('supernag.html','','width=300,height=200'); break;
+	}
+}
+
+//-->
+</script>
+</head>
+<body leftmargin=0 rightmargin=0 MARGINWIDTH=0 MARGINHEIGHT=0 border=0 bgcolor="#000000" >
+<br>
+<center>
+<form name="main">
+<table bgcolor="#000000" cellpadding=0 cellspacing=0 border=0><tr><td>
+<center>
+
+<table cellpadding=2 cellspacing=5 border=0 bordercolor="#000000">
+<tr><td colspan=2 bgcolor="#999999"><img src="ghost.gif" height=20></td><td rowspan=2 bgcolor="#999999" valign="top"><img src="ghost.gif" height=20></td></tr>
+<tr><td rowspan=2 bgcolor="#999999" valign="bottom"><img src="ghost.gif" height=20></td><td>
+
+<table cellpadding=8 cellspacing=0 border=0><tr><td bgcolor="#dddd77">
+<table cellpadding=0 cellspacing=0 border=0><tr><td bgcolor="#000000">
+<table bordercolor="#dddd77" cellpadding=4 cellspacing=5 border=0><tr>
+<td bgcolor="#880000" colspan=2><img src="ghost.gif" height=20></td><td bgcolor="#880000" rowspan=2 valign=top><img src="ghost.gif" height=20></td></tr>
+<tr><td bgcolor="#880000" rowspan=2 valign=bottom><img src="ghost.gif" height=20></td><td bgcolor="#880000" align="center">
+
+<table border=0 cellspacing=0 cellpadding=4><tr><td bgcolor="#ffffff" align="center">
+<textarea cols=24 rows=9 name="info" onBlur="javascript:document.main.info.value=text;">
+   _________________
+   | Twisted Audio |
+   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+  by Trevor McCauley
+        &copy; 2001
+
+All code handwritten and
+   original, free for
+  distribution and use</textarea>
+</td></tr><tr><td align="center" bgcolor="#ffffff">
+Miss anything?
+<select name="sections" onchange="javascript:GetSection();">
+	<option>Section:
+	<option>Start
+	<option>Terms of Service
+	<option>This is NagWare
+	<option>Order
+	<option>Load Audio File
+	<option>Create Audio File
+	<option>Radio Console
+	<option>Vocalist
+	<option>Ukulele
+	<option>Harmonica
+	<option>Percussion
+	<option>Mixer
+	<option>Nag Window
+	<option>Super Nag Window
+</select>
+</td></tr></table>
+
+</td></tr>
+<tr><td bgcolor="#880000" colspan=2 align="center">
+<input type="button" value="&nbsp;OK&nbsp;" onclick="javascript:self.close();">
+</td>
+</tr></table>
+</td></tr></table>
+</td></tr></table>
+
+</td></tr>
+<tr><td colspan=2 bgcolor="#999999" align="right"><img src="ghost.gif" height=20></td>
+</tr></table>
+</td></tr></table>
+</form>
+</body>
+</html>
