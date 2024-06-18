@@ -4,4 +4,4 @@ Old school experimental project from decades ago built with HTML forms and JavaS
 
 Note: Relies on pop-up windows.
 
-[Launch](https://senocular.github.io/twisted-audio/)
+[Launch](https://senocular.github.io/twisted-audio/index.html)
